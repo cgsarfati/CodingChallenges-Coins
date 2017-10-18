@@ -35,6 +35,18 @@ Let's make sure it works when we can spend over 10 pennies::
 
 """
 
+# INSIGHTS
+    # num_coins = num_coins + 1 as amount of items in set
+
+    # (1) P, D
+    # (2) PP, PD, DD
+    # (3) PPP, PPD, PDD, DDD
+    # (4) PPPP, PPPD, PPDD, PDDD, DDDD
+
+    # get num_coins, start with P, then switch endings one by one to D until
+        # all items in list are D; find recursive way to do this switching
+    # output is on a set --> no duplicates, which is helpful.
+    # output does math in each combination. need to store penny=1, dime=10
 
 
 def coins(num_coins):
