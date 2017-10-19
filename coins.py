@@ -64,6 +64,30 @@ def coins(num_coins):
 
     # outside add_coin fn, initiate empty set, call add_coin fn, then return result
 
+    def add_coins(left, total, results):
+        """Add combos coins to total."""
+
+        # for calculation purposes in total parameter
+        dime = 10
+        penny = 1
+
+        # BASE: no coin slots left, so add total to results
+        if left == 0:
+            results.add(total)
+            return
+
+        # PROGRESSION: two paths -- one w/ D, other w/ P. Does all P/D combos by end.
+        add_coins(left - 1, total + dime, results)
+        add_coins(left - 1, total + penny, results)
+
+    # initialize set to be returned
+    results = set()
+
+    # start with initial values
+    add_coins(left=num_coins, total=0, results=results)
+
+    return results
+
 
 if __name__ == '__main__':
     import doctest
