@@ -55,6 +55,15 @@ def coins(num_coins):
     This should return a set of the unique amounts of change possible.
     """
 
+    # Plan: keep track of coin slots left, path total, & final total
+    # Have add_coin fn:
+        # to do math, assign penny=1, dime=10
+        # with each recursion, decrement coin slots left parameter
+        # base case: left == 0 --> stop recursing, add path total to final total
+        # progression: 2 recursions (one for +penny, other for +dime)
+
+    # outside add_coin fn, initiate empty set, call add_coin fn, then return result
+
 
 if __name__ == '__main__':
     import doctest
